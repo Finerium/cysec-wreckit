@@ -1,12 +1,12 @@
-# TALOS — Autonomous Ransomware Defense
+# TALOS: Autonomous Ransomware Defense
 
-> **Tim Cyber Crown — Politeknik Negeri Bandung**
+> **Tim Cyber Crown, Politeknik Negeri Bandung**
 > Submission Hackathon **WRECK-IT 7.0** (Politeknik Siber dan Sandi Negara / BSSN)
 > Subtema: *Autonomous Defense & AI-Driven Threat Hunting*
 
-**TALOS** adalah rancangan sistem pertahanan ransomware otonom berbasis *closed-loop AI agent*: deteksi dini, isolasi otomatis (kill-switch), dan pemulihan cerdas dalam satu lingkar tertutup yang bekerja dalam hitungan detik — tanpa menunggu intervensi manusia pada fase kritis.
+**TALOS** adalah rancangan sistem pertahanan ransomware otonom berbasis *closed-loop AI agent*: deteksi dini, isolasi otomatis (kill-switch), dan pemulihan cerdas dalam satu lingkar tertutup yang bekerja dalam hitungan detik, tanpa menunggu intervensi manusia pada fase kritis.
 
-> ⚠️ **Status repositori: DOKUMENTASI PERENCANAAN — BELUM ADA KODE APLIKASI.**
+> ⚠️ **Status repositori: DOKUMENTASI PERENCANAAN, BELUM ADA KODE APLIKASI.**
 > Sesuai mekanisme lomba, implementasi dilakukan pada waktu hacking yang ditetapkan panitia (babak final). Repositori ini sengaja hanya berisi dokumentasi arsitektur dan rencana implementasi, sehingga juri dapat memverifikasi bahwa tidak ada bagian aplikasi yang dibangun lebih awal.
 
 ---
@@ -16,11 +16,11 @@
 Pada 20 Juni 2024, serangan ransomware **Brain Cipher (varian LockBit 3.0)** melumpuhkan Pusat Data Nasional Sementara (PDNS):
 
 - Layanan keimigrasian bandara dan **lebih dari 280 layanan publik** lintas kementerian/lembaga terhenti.
-- Penyerang lebih dulu **menonaktifkan antivirus** (MITRE ATT&CK T1562), **melumpuhkan mekanisme pemulihan** — Volume Shadow Copy, Hyper-V, backup Veeam (T1490) — lalu mengenkripsi data secara massal (T1486).
+- Penyerang lebih dulu **menonaktifkan antivirus** (MITRE ATT&CK T1562), **melumpuhkan mekanisme pemulihan**, Volume Shadow Copy, Hyper-V, backup Veeam (T1490), lalu mengenkripsi data secara massal (T1486).
 - Tuntutan tebusan USD 8 juta; hanya ±2% data memiliki cadangan.
 - Indeks ketahanan siber nasional (NCSI) Indonesia turun dari peringkat 48 (2023) ke 84 (2025).
 
-Akar persoalannya adalah **kecepatan**: LockBit mampu mengenkripsi ±25.000 berkas/menit (median tuntas ±6 menit — Splunk SURGe), sementara median *dwell time* respons konvensional ±5 hari (Mandiant M-Trends). Pertahanan yang bergantung pada manusia secara struktural kalah cepat. TALOS dirancang untuk memenangkan detik-detik pertama tersebut.
+Akar persoalannya adalah **kecepatan**: LockBit mampu mengenkripsi ±25.000 berkas/menit (median tuntas ±6 menit, Splunk SURGe), sementara median *dwell time* respons konvensional ±5 hari (Mandiant M-Trends). Pertahanan yang bergantung pada manusia secara struktural kalah cepat. TALOS dirancang untuk memenangkan detik-detik pertama tersebut.
 
 ## 2. Arsitektur Closed-Loop
 
@@ -48,7 +48,7 @@ Lingkar tertutup: **Deteksi → Isolasi → Pemulihan**, dan keluaran AI mengali
 
 ## 4. Mengapa On-Premise LLM (Kedaulatan Data)
 
-Model open-weight (DeepSeek V4, jendela konteks 1M token) dijalankan **sepenuhnya di dalam infrastruktur organisasi** — log dan telemetri sensitif tidak pernah keluar ke layanan awan pihak ketiga. Untuk konteks Infrastruktur Informasi Vital nasional, properti ini adalah keharusan, bukan pilihan. Arsitektur dirancang *model-agnostic* sehingga model dapat dipertukarkan tanpa mengubah inti sistem.
+Model open-weight (DeepSeek V4, jendela konteks 1M token) dijalankan **sepenuhnya di dalam infrastruktur organisasi**, log dan telemetri sensitif tidak pernah keluar ke layanan awan pihak ketiga. Untuk konteks Infrastruktur Informasi Vital nasional, properti ini adalah keharusan, bukan pilihan. Arsitektur dirancang *model-agnostic* sehingga model dapat dipertukarkan tanpa mengubah inti sistem.
 
 ## 5. Pendekatan Pengujian yang Aman & Etis
 
@@ -74,7 +74,7 @@ Kerangka standar seperti **Atomic Red Team** (simulasi teknik T1486) digunakan u
 | 6 | Integrasi + simulator aman + pengujian | ⏳ menunggu waktu hacking |
 | 7 | Hardening, evaluasi, persiapan demo | ⏳ menunggu waktu hacking |
 
-Strategi **minimum viable loop**: satu lingkar fungsional utuh dibangun lebih dahulu, baru diperkaya — sehingga di setiap titik selalu ada purwarupa yang dapat didemonstrasikan.
+Strategi **minimum viable loop**: satu lingkar fungsional utuh dibangun lebih dahulu, baru diperkaya, sehingga di setiap titik selalu ada purwarupa yang dapat didemonstrasikan.
 
 ## 7. Tim
 
@@ -87,4 +87,4 @@ Strategi **minimum viable loop**: satu lingkar fungsional utuh dibangun lebih da
 
 ## Lisensi
 
-Didistribusikan di bawah lisensi MIT — lihat [LICENSE](LICENSE).
+Didistribusikan di bawah lisensi MIT, lihat [LICENSE](LICENSE).

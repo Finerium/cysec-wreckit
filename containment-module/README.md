@@ -1,10 +1,10 @@
 # containment-module
 
-**Status: belum diimplementasikan — direktori ini akan diisi pada waktu hacking babak final WRECK-IT 7.0.**
+**Status: belum diimplementasikan, direktori ini akan diisi pada waktu hacking babak final WRECK-IT 7.0.**
 
 ## Apa yang akan dibangun di sini
 
-Eksekutor **kill-switch** otomatis TALOS — target < 10 detik sejak deteksi, tanpa menunggu persetujuan manual:
+Eksekutor **kill-switch** otomatis TALOS, target < 10 detik sejak deteksi, tanpa menunggu persetujuan manual:
 
 - **Isolasi jaringan host** terinfeksi (pemutusan antarmuka / aturan firewall) untuk menghentikan penyebaran lateral.
 - **Terminasi proses** berbahaya yang teridentifikasi mesin deteksi.
