@@ -1,0 +1,26 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+
+# Python (untuk fase implementasi mendatang)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Node (untuk fase implementasi dashboard mendatang)
+node_modules/
+dist/
+build/
+
+# Artefak model / data lokal (tidak pernah di-commit)
+*.gguf
+*.safetensors
+models/
+logs/
